@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/f9d94d6558.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      
+      
+        <section class="today">
+            <div class="first-card" style="width: 300px;">
+                <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+                
+              <h1>
+                <div id="date">Sun, 10 JUL</div>
+              </h1>
+
+              <h2 id="city">
+                ABUJA
+                <div id="time">7:19 pm</div>
+              </h2>
+
+              <h3>
+                Cloudy🌥 <br />
+                feels like 32° 
+              </h3>
+             </div>
+
+            <div class="col-4">
+              <i class="fa-solid fa-cloud-sun cloudy-icon"></i>
+            </div>
+            <div class="col-4">
+              <div id="temp">29° C </div>
+          </div>
+           </div>
+            </div>
+            </div>
+        </section>
+        
+        <section class="more-info">
+            <div class="second-card" style="width: 330px;">
+                <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+             <strong>Wind </strong> 
+          <br />
+          5km/hr
+            </div>
+            <div class="col-4">
+             <strong> Humidity </strong> <br /> 66%
+            </div>
+            <div class="col-4">
+            <strong>  Visibility </strong> <br /> 10km
+            </div>
+            <div class="row">
+              <div class="col-4">
+              <strong>  Pressure </strong> <br /> 1012mb
+              </div>
+              <div class="col-4">
+               <strong> Precipitation </strong><br /> 76%
+              </div>
+              <div class="col-4">
+              <strong>  Dew Point </strong> <br /> 22%
+            </div>
+            </div>
+          </div>
+        </div>
+        </section>
+    
+    
+    <form class="form" id="search-city" action="search">
+    <input class="city" id="enter-city" type="text" placeholder="enter city name..." autocomplete="off" autofocus>
+    <input class="search" type="submit" value="search">
+    <button class="search" id="current">current</button>
+  </form>
+   
+    <div class="five">
+      5 Day Forecast
+    </div>
+    <hr />
+    <section class="prediction">
+        <div class="row">
+        <div class="col">
+        <strong>Tomorrow</strong> <br />    <i class="fa-solid fa-cloud-sun first"></i> <br /> <strong>28°C</strong> <br /> 22°C
+        </div>
+      
+        <div class="col">
+            <strong>Tues 12</strong> <br />    <i class="fa-solid fa-cloud-sun second"></i><br /> <strong>28°C</strong> <br /> 22°C
+            </div>
+    
+          <div class="col">
+              <strong>Wed 13</strong><br />    <i class="fa-solid fa-cloud-sun third"></i><br /> <strong>28°C</strong> <br /> 22°C
+              </div>
+          
+            <div class="col">
+                <strong>Thurs 14</strong><br />    <i class="fa-solid fa-cloud-sun fourth"></i><br /> <strong>27°C</strong> <br /> 22°C
+                </div>
+                <div class="col">
+                    <strong>Fri 15</strong><br />    <i class="fa-solid fa-cloud-sun fifth"></i><br /> <strong>27°C</strong> <br /> 22°C
+                    </div>
+                  </div>
+                 </section>
+                 
+                 <footer>
+                   CODED BY ELLA
+                   
+                  </footer>
+
+    <script src="src/index.js"></script>
+    </div>
+  </body>
+</html>
