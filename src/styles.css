@@ -1,0 +1,139 @@
+.container {
+  width: 650px;
+  margin: 0 auto;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #ffffff;
+  padding: 30px;
+  padding-right: 10px;
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+}
+.first-card,
+.second-card {
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+  max-width: 250px;
+}
+
+.today {
+  padding: 10px;
+  position: relative;
+  right: 0;
+  max-width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #492540;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 15px;
+}
+.cloudy-icon {
+  font-size: 85px;
+  position: relative;
+  bottom: -30px;
+  color: #492540;
+}
+#celsius,
+#farenheit {
+  text-decoration: none;
+  color: #492540;
+}
+.more-info {
+  padding: 15px;
+  position: relative;
+  left: 48%;
+  top: -91px;
+  font-size: 12px;
+  color: #492540;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.temp {
+  font-size: 26px;
+  font-weight: 600;
+  color: #492540;
+}
+.form {
+  text-align: center;
+  padding: 20px;
+}
+.city,
+.search {
+  border: #492540;
+  border-radius: 30px;
+  padding: 10px;
+}
+.city {
+  width: 400px;
+  margin-right: 20px;
+  color: #492540;
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+}
+.search {
+  padding: 8px;
+  width: 100px;
+  background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+  color: #492540;
+  transition: all 200ms ease-in-out;
+}
+.search:hover {
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+  cursor: pointer;
+}
+.five {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 20px;
+  color: #492540;
+  transition: all 200ms ease-in-out;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.five:hover {
+  font-size: 35px;
+}
+hr {
+  color: #492540;
+}
+.prediction {
+  padding: 20px;
+  padding-left: 60px;
+  color: #492540;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth {
+  font-size: 40px;
+  color: #492540;
+}
+footer {
+  font-family: "PT Mono", monospace;
+  color: #492540;
+  text-align: center;
+  padding: 10px;
+}
