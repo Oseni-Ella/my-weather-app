@@ -1,6 +1,21 @@
-.container {
-  width: 650px;
-  margin: 0 auto;
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #492540;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+.weather-app-wrapper {
+  max-width: 700px;
+  max-height: 800px;
+  margin: 30px auto;
   border-radius: 4px;
   margin-top: 15px;
   border: 1px solid #ffffff;
@@ -12,6 +27,7 @@
     rgb(245, 226, 226) 91.1%
   );
 }
+
 .first-card,
 .second-card {
   background: linear-gradient(
@@ -30,21 +46,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1,
-h2,
-h3 {
-  color: #492540;
-}
-h1 {
-  font-size: 20px;
-  font-weight: 700;
-}
-h2 {
-  font-size: 18px;
-}
-h3 {
-  font-size: 15px;
-}
 .cloudy-icon {
   font-size: 85px;
   position: relative;
