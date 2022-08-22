@@ -45,7 +45,20 @@ function search(event) {
   function displayWeather(response) {
     let temperature = Math.round(response.data.main.temp);
     let temp = document.querySelector("#temp");
+    let description = document.querySelector("#description");
+    let humidity = document.querySelector("#humidity");
+    let wind = document.querySelector("#wind");
+    let icon = document.querySelector("#icon");
+
     temp.innerHTML = `${temperature}°C`;
+    description.innerHTML = response.data.weather[0].description;
+    humidity.innerHTML = response.data.main.humidity;
+    wind.innerHTML = Math.round(response.data.wind.speed);
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    icon.setAttribute("alt", response.data.weather[0].description);
   }
   axios.get(apiUrl).then(displayWeather);
 }
@@ -65,7 +78,7 @@ function showLocation(position) {
     let currentTemp = document.querySelector("#temp");
     currentTemp.innerHTML = `${currentTemperature}°C`;
     let city = document.querySelector("#city");
-    city.innerHTML = "ABUJA";
+    city.innerHTML = response.data.name;
   }
 }
 function displayCurrentWeatherData(event) {
