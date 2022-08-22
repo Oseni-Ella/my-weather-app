@@ -52,8 +52,8 @@ function search(event) {
 
     temp.innerHTML = `${temperature}°C`;
     description.innerHTML = response.data.weather[0].description;
-    humidity.innerHTML = response.data.main.humidity;
-    wind.innerHTML = Math.round(response.data.wind.speed);
+    humidity.innerHTML = `${response.data.main.humidity}%`;
+    wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
     icon.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`

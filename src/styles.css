@@ -1,20 +1,5 @@
-ul {
-  margin: 0;
-  padding: 0;
-}
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: #492540;
-  font-size: 16px;
-  font-weight: 100;
-  line-height: 19px;
-}
-
 .weather-app-wrapper {
   max-width: 700px;
-  max-height: 800px;
   margin: 30px auto;
   border-radius: 4px;
   margin-top: 15px;
@@ -27,7 +12,6 @@ li {
     rgb(245, 226, 226) 91.1%
   );
 }
-
 .first-card,
 .second-card {
   background: linear-gradient(
@@ -45,7 +29,23 @@ li {
   max-width: 300px;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+#date,
+#city,
+#time,
+#description {
+  color: #492540;
+}
+#date {
+  font-size: 20px;
+  font-weight: 700;
+}
+#city,
+#time {
+  font-size: 18px;
+}
+#description {
+  font-size: 15px;
+}
 .cloudy-icon {
   font-size: 85px;
   position: relative;
