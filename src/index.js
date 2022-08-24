@@ -31,7 +31,6 @@ if (hour < 12) {
   time.innerHTML = `${hour}:${minute}`;
 }
 
-//feature #2
 function search(event) {
   event.preventDefault();
   let enterCity = document.querySelector("#enter-city");
@@ -85,5 +84,5 @@ function displayCurrentWeatherData(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
-let currentButton = document.querySelector("#current");
-currentButton.addEventListener("click", displayCurrentWeatherData);
+//let currentButton = document.querySelector("#current");
+//currentButton.addEventListener("click", displayCurrentWeatherData);
