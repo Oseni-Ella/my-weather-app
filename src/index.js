@@ -63,7 +63,7 @@ function handleSearch(event) {
   search(enterCity.value);
 }
 let searchCity = document.querySelector("#search-city");
-searchCity.addEventListener("click", search);
+searchCity.addEventListener("submit", handleSearch);
 
 search("Abuja");
 
