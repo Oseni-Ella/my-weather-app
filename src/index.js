@@ -30,39 +30,42 @@ if (hour < 12) {
 } else {
   time.innerHTML = `${hour}:${minute}`;
 }
+function displayWeather(response) {
+  let city = document.querySelector("#city");
+  let temperature = Math.round(response.data.main.temp);
+  let temp = document.querySelector("#temp");
+  let description = document.querySelector("#description");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  let icon = document.querySelector("#icon");
 
-function search(event) {
+  city.innerHTML = response.data.name.toUpperCase();
+  temp.innerHTML = `${temperature}°C`;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = `${response.data.main.humidity}%`;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
+}
+
+function search(city) {
+  let apiKey = "640e2620bb8db2be9b788ec37b4c5e15";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function handleSearch(event) {
   event.preventDefault();
   let enterCity = document.querySelector("#enter-city");
-  let value = enterCity.value;
-  let city = document.querySelector("#city");
-  city.innerHTML = value.toUpperCase().trim();
-
-  let apiKey = "640e2620bb8db2be9b788ec37b4c5e15";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${value}&units=metric&appid=${apiKey}`;
-
-  function displayWeather(response) {
-    let temperature = Math.round(response.data.main.temp);
-    let temp = document.querySelector("#temp");
-    let description = document.querySelector("#description");
-    let humidity = document.querySelector("#humidity");
-    let wind = document.querySelector("#wind");
-    let icon = document.querySelector("#icon");
-
-    temp.innerHTML = `${temperature}°C`;
-    description.innerHTML = response.data.weather[0].description;
-    humidity.innerHTML = `${response.data.main.humidity}%`;
-    wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
-    icon.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-    icon.setAttribute("alt", response.data.weather[0].description);
-  }
-  axios.get(apiUrl).then(displayWeather);
+  search(enterCity.value);
 }
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("click", search);
+
+search("Abuja");
 
 //bonus
 function showLocation(position) {

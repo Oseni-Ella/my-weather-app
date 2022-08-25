@@ -46,11 +46,9 @@
 #description {
   font-size: 15px;
 }
-.cloudy-icon {
-  font-size: 85px;
-  position: relative;
-  bottom: -30px;
-  color: #492540;
+#icon {
+  display: inline;
+  margin: 0;
 }
 #celsius,
 #farenheit {
