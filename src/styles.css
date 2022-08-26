@@ -6,6 +6,7 @@
   border: 1px solid #ffffff;
   padding: 20px;
   padding-right: 10px;
+  padding-top: 30px;
   background: linear-gradient(
     109.6deg,
     rgb(177, 173, 219) 11.2%,
@@ -22,12 +23,13 @@
 }
 
 .first-card {
-  max-width: 460px;
+  max-width: 350px;
   padding: 10px;
   position: relative;
   right: 0;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  border-radius: 4px;
 }
 #date,
 #city,
@@ -76,13 +78,13 @@
   text-align: center;
   padding: 20px;
 }
-.city,
+.entercity,
 .search {
   border: #492540;
   border-radius: 30px;
   padding: 10px;
 }
-.city {
+.entercity {
   width: 400px;
   margin-right: 20px;
   color: #492540;
