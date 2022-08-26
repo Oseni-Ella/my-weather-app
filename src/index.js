@@ -39,8 +39,10 @@ function displayWeather(response) {
   let wind = document.querySelector("#wind");
   let icon = document.querySelector("#icon");
 
+  celsiusTemp = response.data.main.temp;
+
   city.innerHTML = response.data.name.toUpperCase();
-  temp.innerHTML = `${temperature}°C`;
+  temp.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `${response.data.main.humidity}%`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
@@ -65,27 +67,29 @@ function handleSearch(event) {
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", handleSearch);
 
-search("Abuja");
+let celsiusTemp = null;
 
-//bonus
-function showLocation(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiKey = "640e2620bb8db2be9b788ec37b4c5e15";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayCurrentWeather);
-
-  function displayCurrentWeather(response) {
-    let currentTemperature = Math.round(response.data.main.temp);
-    let currentTemp = document.querySelector("#temp");
-    currentTemp.innerHTML = `${currentTemperature}°C`;
-    let city = document.querySelector("#city");
-    city.innerHTML = response.data.name;
-  }
-}
-function displayCurrentWeatherData(event) {
+function showFarenheitTemp(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showLocation);
+  let displayFarenheit = document.querySelector("#temp");
+  let farenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  displayFarenheit.innerHTML = Math.round(farenheitTemp);
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
 }
-//let currentButton = document.querySelector("#current");
-//currentButton.addEventListener("click", displayCurrentWeatherData);
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let displayCelsius = document.querySelector("#temp");
+  displayCelsius.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+}
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("Abuja");
