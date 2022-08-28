@@ -30,6 +30,29 @@ if (hour < 12) {
 } else {
   time.innerHTML = `${hour}:${minute}`;
 }
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <strong>${forecastDay.dt}</strong> <br /><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=""<div id="max-temp"><strong>${forecastDay.temp.max}°C</div></strong> <div id="min-temp">${forecastDay.temp.min}°C</div>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `640e2620bb8db2be9b788ec37b4c5e15`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   let city = document.querySelector("#city");
   let temperature = Math.round(response.data.main.temp);
@@ -51,11 +74,12 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
-  let apiKey = "640e2620bb8db2be9b788ec37b4c5e15";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiKey = `640e2620bb8db2be9b788ec37b4c5e15`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -92,4 +116,5 @@ farenheitLink.addEventListener("click", showFarenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
+displayForecast();
 search("Abuja");
