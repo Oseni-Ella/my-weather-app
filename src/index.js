@@ -1,4 +1,3 @@
-//feature #1
 let now = new Date();
 
 let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Saturday"];
@@ -25,22 +24,38 @@ let minute = now.getMinutes();
 let date = document.querySelector("#date");
 date.innerHTML = `${day}, ${currentDate} ${month}`;
 let time = document.querySelector("#time");
-if (hour < 12) {
-  time.innerHTML = `0${hour}:${minute}`;
+if (hour < 10 && minute < 10) {
+  time.innerHTML = `0${hour}:0${minute}`;
 } else {
   time.innerHTML = `${hour}:${minute}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-        <strong>${forecastDay.dt}</strong> <br /><img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=""<div id="max-temp"><strong>${forecastDay.temp.max}°C</div></strong> <div id="min-temp">${forecastDay.temp.min}°C</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6)
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+        <strong>${formatDay(
+          forecastDay.dt
+        )}</strong> <br /><img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt=""<div id="max-temp"><strong>${Math.round(
+          forecastDay.temp.max
+        )}°C</strong></div> <div id="min-temp">${Math.round(
+          forecastDay.temp.min
+        )}°C</div>
         </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
@@ -49,7 +64,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `640e2620bb8db2be9b788ec37b4c5e15`;
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -116,5 +131,4 @@ farenheitLink.addEventListener("click", showFarenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
-displayForecast();
 search("Abuja");
