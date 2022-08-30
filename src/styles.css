@@ -1,17 +1,25 @@
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+}
 .weather-app-wrapper {
   max-width: 700px;
   margin: 30px auto;
   border-radius: 4px;
   margin-top: 15px;
+  margin-bottom: 10px;
   border: 1px solid #ffffff;
   padding: 20px;
-  padding-right: 10px;
   padding-top: 30px;
   background: linear-gradient(
     109.6deg,
     rgb(177, 173, 219) 11.2%,
     rgb(245, 226, 226) 91.1%
   );
+  box-shadow: 10px 10px 5px rgba(136, 136, 136, 0.5);
 }
 .first-card,
 .second-card {
@@ -20,6 +28,8 @@
     rgb(177, 173, 219) 11.2%,
     rgb(245, 226, 226) 91.1%
   );
+  box-shadow: 2px 5px 2px rgba(136, 136, 136, 0.5);
+  border-radius: 4px;
 }
 
 .first-card {
@@ -29,7 +39,6 @@
   right: 0;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  border-radius: 4px;
 }
 #date,
 #city,
@@ -83,6 +92,7 @@
   border: #492540;
   border-radius: 30px;
   padding: 10px;
+  box-shadow: 2px 5px 2px rgba(136, 136, 136, 0.5);
 }
 .entercity {
   width: 400px;
@@ -120,19 +130,24 @@ hr {
   color: #492540;
 }
 .prediction {
-  padding: 20px;
-  padding-left: 60px;
+  padding: 10px;
   color: #492540;
   font-family: "Roboto Condensed", sans-serif;
 }
-
-.first,
-.second,
-.third,
-.fourth,
-.fifth {
-  font-size: 40px;
-  color: #492540;
+.col {
+  transition: all 200ms ease-in-out;
+  font-size: 16px;
+}
+.col:hover {
+  border-radius: 4px;
+  background: linear-gradient(
+    109.6deg,
+    rgb(177, 173, 219) 11.2%,
+    rgb(245, 226, 226) 91.1%
+  );
+  cursor: pointer;
+  font-size: 23px;
+  box-shadow: 2px 5px 2px rgba(136, 136, 136, 0.5);
 }
 footer {
   font-family: "PT Mono", monospace;

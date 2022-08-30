@@ -43,15 +43,15 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6)
+    if (index < 5)
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col">
         <strong>${formatDay(
           forecastDay.dt
         )}</strong> <br /><img src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
-        }@2x.png" alt=""<div id="max-temp"><strong>${Math.round(
+        }@2x.png" alt=""/><div id="max-temp"><strong>${Math.round(
           forecastDay.temp.max
         )}°C</strong></div> <div id="min-temp">${Math.round(
           forecastDay.temp.min
