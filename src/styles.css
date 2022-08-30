@@ -57,6 +57,13 @@ body {
 #time {
   font-size: 18px;
 }
+#feels-like {
+  position: relative;
+  left: 35%;
+  font-family: "PT Mono", monospace;
+  font-weight: 600;
+  font-size: 14px;
+}
 #description {
   font-size: 15px;
 }
@@ -69,12 +76,13 @@ body {
   max-width: 250px;
   padding: 10px;
   position: relative;
-  left: 55%;
+  left: 60%;
   top: -91px;
-  font-size: 12px;
+  font-size: 16px;
   color: #492540;
   font-family: "Roboto Condensed", sans-serif;
   margin: 0;
+  line-height: 30px;
 }
 
 #temp {

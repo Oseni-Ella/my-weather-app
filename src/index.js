@@ -70,8 +70,8 @@ function getForecast(coordinates) {
 function displayWeather(response) {
   console.log(response);
   let city = document.querySelector("#city");
-  let temperature = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temp");
+  let feelsLike = document.querySelector("#feels-like");
   let description = document.querySelector("#description");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
@@ -79,9 +79,11 @@ function displayWeather(response) {
   let icon = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
+  celsiusFeelsLike = response.data.main.feels_like;
 
   city.innerHTML = response.data.name.toUpperCase();
-  temp.innerHTML = `${temperature}`;
+  temp.innerHTML = Math.round(celsiusTemp);
+  feelsLike.innerHTML = `Feels like: ${Math.round(celsiusFeelsLike)}°C`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `${response.data.main.humidity}%`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
@@ -109,6 +111,7 @@ let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", handleSearch);
 
 let celsiusTemp = null;
+let celsiusFeelsLike = null;
 
 function showFarenheitTemp(event) {
   event.preventDefault();
@@ -117,6 +120,11 @@ function showFarenheitTemp(event) {
   displayFarenheit.innerHTML = Math.round(farenheitTemp);
   celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
+  let farenheitFeelsLike = (celsiusFeelsLike * 9) / 5 + 32;
+  let displayFarenheitFeelsLike = document.querySelector("#feels-like");
+  displayFarenheitFeelsLike.innerHTML = `Feels like: ${Math.round(
+    farenheitFeelsLike
+  )}°F`;
 }
 
 function showCelsiusTemp(event) {
