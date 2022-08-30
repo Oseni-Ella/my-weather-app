@@ -19,89 +19,92 @@
       src="https://kit.fontawesome.com/f9d94d6558.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-          <section class="today">
-            <div class="first-card">
+        <section class="today">
+          <div class="first-card">
             <div class="card-body">
-          <div class="row">
-            <div class="col-4">
-              <h1>
-                <div id="date"></div>
-              </h1>
+              <div class="row">
+                <div class="col-4">
+                  <h1>
+                    <div id="date"></div>
+                  </h1>
 
-              <h2 id="city"></h2>
-                <div id="time"></div>
-             </div>
-           
-  
-            <div class="col-8">
-              <img id="icon" src="#" alt=""/><span id="temp"></span><a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="farenheit-link">°F</a>
-          </div>
-          <h3>
-            <span id="description"></span> 
-          </h3>
-          </div>
+                  <h2 id="city"></h2>
+                  <div id="time"></div>
+                </div>
+
+                <div class="col-8">
+                  <img id="icon" src="#" alt="" /><span id="temp"></span
+                  ><a href="#" id="celsius-link" class="active">°C</a> |
+                  <a href="#" id="farenheit-link">°F</a>
+                </div>
+                <h3>
+                  <span id="description"></span>
+                </h3>
+              </div>
             </div>
-            </div>
+          </div>
         </section>
-        
+
         <section class="more-info">
-            <div class="second-card">
-                <div class="card-body">
-          <div class="row">
-            <div class="col-4">
-             <strong>Wind</strong><div id="wind"></div>
-            </div>
-            <div class="col-4">
-             <strong> Humidity </strong> <div id="humidity"></div>
-            </div>
-            <div class="col-4">
-            <strong>  Visibility </strong> <br /> 10km
-            </div>
-            <div class="row">
-              <div class="col-4">
-              <strong>  Pressure </strong> <br /> 1012mb
+          <div class="second-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4">
+                  <strong>Wind</strong>
+                  <div id="wind"></div>
+                </div>
+                <div class="col-4">
+                  <strong> Humidity </strong>
+                  <div id="humidity"></div>
+                </div>
+                <div class="col-4">
+                  <strong> Pressure </strong> 
+                  <div id="pressure"></div>
+                </div>
               </div>
-              <div class="col-4">
-               <strong> Precipitation </strong><br /> 76%
-              </div>
-              <div class="col-4">
-              <strong>  Dew Point </strong> <br /> 22%
-            </div>
             </div>
           </div>
-        </div>
         </section>
-    
-    
-    <form class="form" id="search-city" action="search">
-    <input class="entercity" id="enter-city" type="text" placeholder="enter city name..." autocomplete="off" autofocus>
-    <input class="search" type="submit" value="search">
-  </form>
-   
-    <div class="five">
-      5 Day Forecast
-    </div>
-    <hr />
-    
-    <section class="prediction">
-        <div id="forecast">
-        </div>
-    </section>
 
-    <script src="src/index.js"></script>
-    </div>
+        <form class="form" id="search-city" action="search">
+          <input
+            class="entercity"
+            id="enter-city"
+            type="text"
+            placeholder="enter city name..."
+            autocomplete="off"
+            autofocus
+          />
+          <input class="search" type="submit" value="search" />
+        </form>
+
+        <div class="five">5 Day Forecast</div>
+        <hr />
+
+        <section class="prediction">
+          <div id="forecast"></div>
+        </section>
+
+        <script src="src/index.js"></script>
+      </div>
     </div>
     <footer>
-      <a href="https://github.com/Oseni-Ella/my-weather-app">Open-source code</a> by OSENI EMMANUELLA
+      <a href="https://github.com/Oseni-Ella/my-weather-app"
+        >Open-source code</a
+      >
+      by OSENI EMMANUELLA
     </footer>
   </body>
 </html>
